@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My Note</string>
+    <string name="note_app">Note App</string>
+    <string name="title">Title</string>
+    <string name="note">note</string>
+    <string name="date">date</string>
+    <string name="title1">Title</string>
+    <string name="noteEtn">Type your note here.</string>
+    <string name="pin_unpin">Pin/UnPin</string>
+</resources>
