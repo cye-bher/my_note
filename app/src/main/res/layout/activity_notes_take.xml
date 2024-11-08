@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:orientation="vertical"
-    android:background="@color/color3"
+    android:background="@color/color7"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".NotesTakeActivity">
@@ -26,16 +26,18 @@
             android:layout_centerVertical="true"
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="12dp"/>
+
         <ImageView
             android:id="@+id/saveBtn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/save"
-            android:backgroundTint="@color/green"
-            android:background="@drawable/gradient_button"
+            android:layout_width="54dp"
+            android:layout_height="50dp"
             android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
             android:layout_marginHorizontal="20dp"
-            android:layout_centerVertical="true"/>
+            android:layout_marginEnd="11dp"
+
+            android:backgroundTint="@color/green"
+            android:src="@drawable/add_lib" />
     </RelativeLayout>
     <EditText
         android:id="@+id/titleEdt"
@@ -58,6 +60,6 @@
         android:textSize="24sp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"
-        android:singleLine="true"/>
+        android:singleLine="false"/>
 
 </LinearLayout>

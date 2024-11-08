@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/background2">
+    android:background="@drawable/background1">
 
     <LinearLayout
         android:id="@+id/navLL"
@@ -40,7 +40,7 @@
         android:layout_height="?attr/actionBarSize"
         app:queryHint="Search Note"
         app:iconifiedByDefault="false"
-        android:background="@color/green"/>
+        android:background="@color/white"/>
 
     </androidx.cardview.widget.CardView>
 
@@ -61,7 +61,7 @@
         android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="24dp"
         android:background="@drawable/gradient_button"
-        android:backgroundTint="@color/green"
+        android:backgroundTint="@color/white"
         android:src="@drawable/add_asset"/>
 
 
