@@ -94,25 +94,24 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @NotNull Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 101){
-            if (resultCode == MainActivity.RESULT_OK) {
-                Notes new_notes = (Notes) data.getSerializableExtra("note");
-                database.mainDAO().insert(new_notes);
-                notes.clear();
-                notes.addAll(database.mainDAO().getAll());
-                noteListAdapter.notifyDataSetChanged();
-            }
-        }else if (requestCode == 102){
-            if (resultCode == Activity.RESULT_OK){
-                Notes new_notes = (Notes) data.getSerializableExtra("note");
-                database.mainDAO().update(new_notes.getId(), new_notes.getTitle(), new_notes.getNote());
-                notes.clear();
-                notes.addAll(database.mainDAO().getAll());
-                noteListAdapter.notifyDataSetChanged();
+        if (resultCode == Activity.RESULT_OK && data != null) {
+            Notes receivedNote = (Notes) data.getSerializableExtra("note");
 
+            if (requestCode == 101) {
+                database.mainDAO().insert(receivedNote);
+            } else if (requestCode == 102) {
+                database.mainDAO().update(receivedNote.getId(), receivedNote.getTitle(), receivedNote.getNote());
             }
+            refreshNotesList();
         }
     }
+        private void refreshNotesList() {
+            notes.clear();
+            notes.addAll(database.mainDAO().getAll());
+            noteListAdapter.notifyDataSetChanged();
+        }
+
+
     public void updateRecycle(List<Notes> notes){
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL));

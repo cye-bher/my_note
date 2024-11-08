@@ -16,7 +16,7 @@ public interface MainDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(Notes notes);
 
-    @Query("SELECT * FROM notes_data ORDER BY id DESC")
+    @Query("SELECT * FROM notes_data ORDER BY pin DESC, id DESC")
     List<Notes> getAll();
 
     @Query("UPDATE notes_data SET title = :title, note = :note  WHERE ID = :id")
